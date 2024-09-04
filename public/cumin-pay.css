@@ -1,0 +1,53 @@
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .cumin-login-form {
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .cumin-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  .payment-button {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+  
+  .cumin-link {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .wallet-option {
+    margin: 20px 0;
+  }
+  
+  .wallet-option p.exchange-rate {
+    color: grey;
+    font-size: 12px;
+  }
+  
+  #loading-overlay {
+    display: none;
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }

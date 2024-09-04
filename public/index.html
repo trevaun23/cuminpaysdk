@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Example</title>
+  <style>
+    /* Basic styling */
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+    }
+    #overlay-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+    }
+    #card-fields {
+      display: none;
+      margin-top: 20px;
+    }
+    #card-fields input {
+      margin: 5px;
+      padding: 10px;
+      width: 90%;
+    }
+    .payment-button {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    #pay-with-cumin {
+      background-color: #ffc439;
+    }
+    #debit-credit-card {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<div id="payment-options">
+  <button id="pay-with-cumin" class="payment-button">Pay with Cumin</button>
+  <button id="debit-credit-card" class="payment-button">Debit or Credit Card</button>
+</div>
+
+<div id="overlay">
+  <div id="overlay-content">
+    <p>Don't see a secure Cumin browser? We'll help you re-launch the window to complete your purchase</p>
+    <button id="close-overlay">Click to Continue</button>
+  </div>
+</div>
+
+<div id="card-fields">
+  <input type="text" placeholder="Card number">
+  <input type="text" placeholder="Expires">
+  <input type="text" placeholder="CSC">
+  <input type="text" placeholder="First name">
+  <input type="text" placeholder="Last name">
+  <input type="text" placeholder="Street address">
+  <input type="text" placeholder="Apt., ste., bldg.">
+</div>
+
+<script src="https://cuminpay-59a4b.web.app/cumin-pay.js" defer></script>
+<script>
+  document.getElementById('pay-with-cumin').addEventListener('click', function() {
+    // Display the overlay
+    document.getElementById('overlay').style.display = 'block';
+    
+    // Open the pop-up window
+    let popupWindow = window.open('', 'PaymentWindow', 'width=400,height=600');
+    popupWindow.document.write('<html><head><title>Secure Payment</title></head><body style="display:flex;justify-content:center;align-items:center;height:100vh;"><div style="text-align:center;"><div style="border-radius:50%;width:80px;height:80px;border:5px solid #ccc;display:inline-block;position:relative;"><div style="position:absolute;width:40px;height:40px;border-radius:50%;border:5px solid #3498db;top:15px;left:15px;"></div></div><br><p>Loading Secure Payment...</p></div></body></html>');
+    popupWindow.focus();
+  });
+
+  document.getElementById('close-overlay').addEventListener('click', function() {
+    document.getElementById('overlay').style.display = 'none';
+  });
+
+  document.getElementById('debit-credit-card').addEventListener('click', function() {
+    document.getElementById('card-fields').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>

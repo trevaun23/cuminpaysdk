@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",  // Ensure at least ES2015
+    "module": "commonjs", // or "esnext" depending on your environment
+    "outDir": "./public",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}
